@@ -50,7 +50,7 @@ Example Error Response:
 
 ```json
 {
-  "error": "File is missing or invalid format"
+  "error": "File not provided"
 }
 ```
 
