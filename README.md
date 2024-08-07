@@ -1,24 +1,39 @@
-# README
+# Customer Invitation API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This API allows you to invite customers within a specified distance (100 km) from a given office location. Customers' data is provided via a text file, and the Haversine formula is used to calculate the distance between the office and each customer's location.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- Upload a text file with customer data.
+- Calculate the distance between the office and each customer using the Haversine formula.
+- Return a list of customers within 100 km of the office.
 
-* System dependencies
+## Endpoints
 
-* Configuration
+### POST /api/v1/customers/invite
 
-* Database creation
+Invites customers within 100 km of the office based on the uploaded file.
 
-* Database initialization
+#### Request
 
-* How to run the test suite
+- **URL:** `/api/v1/customers/invite`
+- **Method:** `POST`
+- **Params:**
+  - `file` (required): A text file containing customer data.
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Response
 
-* Deployment instructions
-
-* ...
+- **Status:** `200 OK`
+- **Content-Type:** `application/json`
+- **Body:**
+  ```json
+  [
+      {
+          "user_id": 25,
+          "name": "Pratik"
+      },
+      {
+          "user_id": 32,
+          "name": "Manish"
+      }
+  ]
